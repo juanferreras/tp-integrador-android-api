@@ -3,7 +3,8 @@ var Restaurante = mongoose.model('Restaurante');
 var FCM = require('fcm-push');
 var serverKey = process.env.FCM;
 
-if (!process.env.FCM) console.log("No se encontró la API Key de Firebase. Las notificaciones Push no van a funcionar.")
+if (!process.env.FCM) 
+  console.log("No se encontró la API Key de Firebase. Las notificaciones Push no van a funcionar.")
 
 var sendJSON = function(res, status, content) {
   res.status(status);
@@ -24,12 +25,10 @@ module.exports.getRestaurante = function(req, res) {
           return;
         } else if (err) {
           // se ha producido otro error genérico
-          console.log(err);
           sendJSON(res, 404, err);
           return;
         }
         // se encontró el restaurante buscado
-        console.log(restaurante);
         sendJSON(res, 200, restaurante);
       });
   } else {
@@ -104,9 +103,9 @@ var gestionarPedido = function(token){
 
   fcm.send(message, function(err, response){
       if (err) {
-          console.log("Error enviando notificación push: ", err);
+          console.log("Error enviando notificación push:", err);
       } else {
-          console.log("Éxito enviando notificación push: ", response);
+          console.log("Éxito enviando notificación push:", response);
       }
   });
 }
