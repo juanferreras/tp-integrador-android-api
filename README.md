@@ -7,6 +7,8 @@ API de Express para el TP Integrador Android, de la cátedra "Desarrollo de Apli
 * ```mongod``` (en otra terminal) para iniciar el servicio de MongoDB
 * ```npm run cargar-datos``` para cargar datos de prueba
 * ```npm start``` para ejecutar la aplicación. Para que funcionen las notificaciones FCM asegurarse de tener seteada la variable de entorno `FCM` con el valor de la clave de servidor.
+  * `set FCM=API_KEY&&npm start` para Windows
+  * ```export FCM=API_KEY&&npm start``` para Mac/Linux
 
 ## Endpoints
 * GET ```'/api/restaurantes/:restauranteId'```
