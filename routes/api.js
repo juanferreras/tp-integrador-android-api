@@ -6,6 +6,6 @@ var ctrlRestaurantes = require('../controllers/restaurantes')
 router.get('/restaurantes/:restauranteId', ctrlRestaurantes.getRestaurante);
 
 /* POST pedido */
-router.post('/restaurantes/:restauranteId', ctrlRestaurantes.postPedido);
+router.post('/restaurantes/:restauranteId/pedidos', ctrlRestaurantes.postPedido);
 
 module.exports = router;
