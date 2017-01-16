@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = process.env.MONGOLAB_URI || 'mongodb://localhost/Pedime';
+var dbURI = process.env.MONGODB_URI || 'mongodb://localhost/Pedime';
 
 mongoose.connect(dbURI);
 
