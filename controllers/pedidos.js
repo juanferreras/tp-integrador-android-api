@@ -44,7 +44,7 @@ module.exports.postPedido = function(req, res) {
 };
 
 var gestionarPedido = function(token){
-  // si no llegó el token del dispositivo retornar
+  // si no llegó el token del dispositivo, cancelar
   if (!token) return;
   var fcm = new FCM(serverKey);
 

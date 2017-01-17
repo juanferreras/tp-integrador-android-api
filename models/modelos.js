@@ -6,6 +6,7 @@ var platoSchema = new mongoose.Schema({
         required: true,
     },
     descripcion: String,
+    foto: String,
     precio: {
         type: Number,
         required: true,
