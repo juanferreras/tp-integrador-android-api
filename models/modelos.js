@@ -24,6 +24,10 @@ var pedidoSchema = new mongoose.Schema({
         min: 0
     },
     platos: [platoSchema],
+    restauranteId: {
+        type: mongoose.Schema.ObjectId,
+        required: true
+    },
     hora: {
         type: Date,
         "default": Date.now
@@ -41,8 +45,8 @@ var restauranteSchema = new mongoose.Schema({
         required: true
     },
     direccion: String,
-    platos: [platoSchema],
-    pedidos: [pedidoSchema]
+    platos: [platoSchema]
 });
 
 mongoose.model('Restaurante', restauranteSchema);
+mongoose.model('Pedido', pedidoSchema);

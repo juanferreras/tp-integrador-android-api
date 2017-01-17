@@ -30,4 +30,4 @@ process.on('SIGINT', function() {
 });
 
 // Modelos de la aplicación
-require('./restaurantes');
+require('./modelos');
