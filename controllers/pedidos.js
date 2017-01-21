@@ -21,7 +21,7 @@ module.exports.postPedido = function(req, res) {
     return;
   }
 
-  Pedidos.create({
+  Pedido.create({
     restauranteId: req.params.restauranteId,
     mesa: req.body.mesa,
     precioTotal: req.body.precioTotal,
@@ -39,7 +39,7 @@ module.exports.postPedido = function(req, res) {
 
 var gestionarPedido = function(token){
   // si no llegó el token del dispositivo, cancelar
-  if (!token) return;
+  if (!token || !serverKey) return;
   var fcm = new FCM(serverKey);
 
   var message = {
