@@ -21,12 +21,6 @@ module.exports.postPedido = function(req, res) {
     return;
   }
 
-  restaurante.pedidos.push({
-    mesa: req.body.mesa,
-    precioTotal: req.body.precioTotal,
-    platos: req.body.platos
-  });
-
   Pedidos.create({
     restauranteId: req.params.restauranteId,
     mesa: req.body.mesa,
