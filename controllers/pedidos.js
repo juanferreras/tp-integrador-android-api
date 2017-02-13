@@ -32,7 +32,11 @@ module.exports.postPedido = function(req, res) {
     } else {
       // se creó el pedido correctamente
       sendJSON(res, 201, pedido);
-      gestionarPedido(req.body.token);
+
+      // mandar notificación push pasado 5 segundos
+      setTimeout(function(){
+        gestionarPedido(req.body.token);
+      }, 5000)
     }
   });
 };
